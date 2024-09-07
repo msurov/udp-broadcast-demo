@@ -1,6 +1,6 @@
 [submodule "3rd_party/networking"]
 	path = 3rd_party/networking
-	url = git@gitlab.com:msurov/cppnetworking.git
+	url = https://gitlab.com/msurov/cppnetworking.git
 [submodule "3rd_party/misc"]
 	path = 3rd_party/misc
-	url = git@gitlab.com:msurov/cppmisc.git
+	url = https://gitlab.com/msurov/cppmisc.git

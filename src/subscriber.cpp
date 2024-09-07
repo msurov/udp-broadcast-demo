@@ -5,7 +5,16 @@
 
 int main(int argc, char **argv)
 {
-  UDPBCSubscriber sub("127.255.255.255", 9597);
+  if (argc != 3)
+  {
+    printf("format: subscriber boradcast_ip local_port\n"
+           "example:\n"
+           "    subscriber 127.255.255.255 9597\n"
+    );
+    return -1;
+  }
+
+  UDPBCSubscriber sub(argv[1], std::atoi(argv[2]));
   while (true)
   {
     char buf[1024] = "";

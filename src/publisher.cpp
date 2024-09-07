@@ -5,7 +5,15 @@
 
 int main(int argc, char **argv)
 {
-  UDPBCPublusher pub("127.0.0.1", "127.255.255.255", 9597);
+  if (argc != 4)
+  {
+    printf("format: publisher local_ip boradcast_ip destination_port\n"
+           "example:\n"
+           "    publisher 127.0.0.1 127.255.255.255 9597\n"
+    );
+    return -1;
+  }
+  UDPBCPublusher pub(argv[1], argv[2], std::atoi(argv[3]));
   for (int i = 1; i < 1000; ++ i)
   {
     char buf[64];
